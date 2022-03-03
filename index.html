@@ -11,7 +11,7 @@
 
 <body>
     <button onclick="getMood()">Get Mood</button>
-    <input type="text" name="setMood" id="setMood" />
+    <input type="text" id="mood-input" />
     <button onclick="setMood()">Set Mood</button>
 
     <script>
@@ -64,7 +64,7 @@
 
         async function setMood()
         {
-            let mood = document.getElementById("setMood");
+            let mood = document.getElementById("mood-input").value;
             setMoodPromise = contract.setMood(mood);
             await setMoodPromise;
         }
