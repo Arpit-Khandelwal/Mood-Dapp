@@ -56,7 +56,12 @@
             contract = new ethers.Contract(contractAddress, contractABI, signer);
         });
 
-        
+        async function getMood(){
+            getMoodPromise = contract.getMood();
+            var mood = await getMoodPromise;
+            console.log(mood);
+        }
+
     </script>
 </body>
 
