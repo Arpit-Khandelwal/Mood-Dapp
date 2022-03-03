@@ -10,9 +10,9 @@
 </head>
 
 <body>
-    <button>Get Mood</button>
+    <button onclick="getMood()">Get Mood</button>
     <input type="text" name="setMood" id="setMood" />
-    <button>Set Mood</button>
+    <button onclick="setMood()">Set Mood</button>
 
     <script>
         window.ethereum.enable();
@@ -62,6 +62,12 @@
             console.log(mood);
         }
 
+        async function setMood()
+        {
+            let mood = document.getElementById("setMood");
+            setMoodPromise = contract.setMood(mood);
+            await setMoodPromise;
+        }
     </script>
 </body>
 
