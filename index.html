@@ -13,6 +13,7 @@
     <button onclick="getMood()">Get Mood</button>
     <input type="text" id="mood-input" />
     <button onclick="setMood()">Set Mood</button>
+    <div id="showMood"></div>
 
     <script>
         window.ethereum.enable();
@@ -60,6 +61,7 @@
             getMoodPromise = contract.getMood();
             var mood = await getMoodPromise;
             console.log(mood);
+            document.getElementById("showMood").innerText="Current Mood: "+mood;
         }
 
         async function setMood()
